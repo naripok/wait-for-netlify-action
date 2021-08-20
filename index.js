@@ -29,7 +29,7 @@ const run = async () => {
     if (!siteName) {
       core.setFailed("Required field `site_name` was not provided");
     }
-    const url = `https://deploy-preview-${PR_NUMBER}--${siteName}.netlify.app`;
+    const url = `deploy-preview-${PR_NUMBER}--${siteName}.netlify.app`;
     core.setOutput("url", url);
     const extraHeaders = core.getInput("request_headers");
     const headers = !extraHeaders ? {} : JSON.parse(extraHeaders)
