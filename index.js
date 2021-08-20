@@ -6,7 +6,7 @@ const waitForUrl = async (url, MAX_TIMEOUT, { headers }) => {
   const iterations = MAX_TIMEOUT / 2;
   for (let i = 0; i < iterations; i++) {
     try {
-      await axios.get(url, { headers });
+      await axios.get(`https://${url}`, { headers });
       return;
     } catch (e) {
       console.log("Url unavailable, retrying...");
